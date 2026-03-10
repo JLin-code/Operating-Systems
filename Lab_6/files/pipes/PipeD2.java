@@ -1,13 +1,13 @@
 import java.io.*;
 
-public class TwoWayPipesProcess {
+public class PipeD2 {
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    private static void runParent() throws IOException, InterruptedException {
 
         // We will run the SAME program as child, but detect mode via argument
         ProcessBuilder pb = new ProcessBuilder(
             "java", "-cp", System.getProperty("java.class.path"), 
-            TwoWayPipesProcess.class.getName(), "--child"
+            PipeD2.class.getName(), "--child"
         );
 
         // Connect pipes
@@ -54,13 +54,11 @@ public class TwoWayPipesProcess {
         }
     }
 
-    // Entry point — decide if parent or child
     public static void main(String[] args) throws Exception {
         if (args.length > 0 && args[0].equals("--child")) {
             mainChild();
             return;
         }
-        // Otherwise run parent logic (above)
-        // ... parent code from the beginning ...
+        runParent();
     }
 }

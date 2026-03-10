@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class TwoWayPipesThreads {
+public class PipeD {
 
     public static void main(String[] args) throws IOException {
 
