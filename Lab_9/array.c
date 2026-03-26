@@ -24,7 +24,7 @@ int main() {
     free(data);
 	
 	//question 6
-	//printf("data[10] after free: %d\n", data[10]);
+	printf("data[10] after free: %d\n", data[10]);
 	
 
     return 0;
